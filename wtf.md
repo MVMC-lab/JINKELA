@@ -6,7 +6,7 @@
 | 0 | HEADER   | 1 | 0xFD |  |
 | 1 | ADDRES   | 2 |  |  |
 | 2 | FUNCTION | 1 |  |  |
-| 3 | SEQUENCE | 1 |  | bit 0~4 : seq 代表當前封包編號 <br> bit 5 : isContinuous 此封包結束後是否還有封包 <br> bit 6~7 : 無意義  |
+| 3 | SEQUENCE | 1 |  | bit 0\~4 : seq 代表當前封包編號 <br> bit 5 : isContinuous 此封包結束後是否還有封包 <br> bit 6\~7 : 無意義  |
 | 4 | LENGTH   | 2 |  | 決定DATA欄位的資料大小 |
 | 5 | DATA     | N |  | 依據LENGTH欄位決定大小 |
 | 6 | CHKSUKM  | 1 |  | 編號 1~5 資料總和對0xFF取餘 |
@@ -61,10 +61,10 @@ ADDRES為代表裝置位址，表示此封包需要傳送到哪個裝置上。
 | 12 | STAISR |  |  | 設定6w485裝置ISR開關 |
 | 13 | MAGIC |  |  | 設定6w485裝置自我毀廟倒數計時 |
 |  |  |  |  |  |
-| 20 | ??? |  |  | Array 資料發送 |
-| 21 | ??? |  |  | Array 資料接收 |
-| 22 | ??? |  |  | Struct 資料發送 |
-| 23 | ??? |  |  | Struct 資料接收 |
+| 21 | ARGET |  |  | Array 資料發送 |
+| 22 | ARPUT |  |  | Array 資料接收 |
+| 23 | STGET |  |  | Struct 資料發送 |
+| 24 | STPUT |  |  | Struct 資料接收 |
 
 
 
@@ -73,6 +73,6 @@ ADDRES為代表裝置位址，表示此封包需要傳送到哪個裝置上。
 代表此封包在連續傳輸封包中的序列，並表示是否有接續的封包。  
 其中不同bits代表不同意義。  
 
-bit 0~4 : seq - 代表當前的序列範圍為0~31。  
-bit   5 : isContinuous - 代表是否有接續的封包
-bit 6~7 : 無意義。
+bit 0\~4 : seq \- 代表當前的序列範圍為0~31。  
+bit   5 : isContinuous \- 代表是否有接續的封包
+bit 6\~7 : 無意義。
