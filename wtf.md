@@ -4,7 +4,7 @@
 | 編號 | 名稱 | 大小(byte) | 資料 | 備註 |  
 | :--- | :--- | :--- | :--- | :--- |  
 | 0 | HEADER   | 1 | 0xFD |  |
-| 1 | ADDRES   | 2 |  |  |
+| 1 | ADDRES   | 1 |  |  |
 | 2 | FUNCTION | 1 |  |  |
 | 3 | SEQUENCE | 1 |  | bit 0\~4 : seq 代表當前封包編號 <br> bit 5 : isContinuous 此封包結束後是否還有封包 <br> bit 6\~7 : 無意義  |
 | 4 | LENGTH   | 2 |  | 決定DATA欄位的資料大小 |
@@ -28,8 +28,6 @@
 
 
 ## ADDRESS
-
-    NOTE 待決定：ADDRES大小1或2bytes
 
 ADDRES為代表裝置位址，表示此封包需要傳送到哪個裝置上。  
 0 為廣播用。  
